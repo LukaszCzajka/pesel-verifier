@@ -1,0 +1,50 @@
+11111111111	| PESEL NIEPOPRAWNY
+---------------------------------
+            h	| PESEL NIEPOPRAWNY - dopuszczalne tylko cyfry
+---------------------------------
+jkhgkjgkjgh	| PESEL NIEPOPRAWNY - dopuszczalne tylko cyfry
+---------------------------------
+621454272656	| PESEL NIEPOPRAWNY - zbyt długi
+---------------------------------
+03325f52391	| PESEL NIEPOPRAWNY - dopuszczalne tylko cyfry
+---------------------------------
+98121061727	| Pesel poprawny!
+Płeć: F	|  Data urodzin: 10.12.1998r.	|  Wiek: 0
+---------------------------------
+072654555873	| PESEL NIEPOPRAWNY - zbyt długi
+---------------------------------
+89032529266	| Pesel poprawny!
+Płeć: F	|  Data urodzin: 25.3.1989r.	|  Wiek: 0
+---------------------------------
+62244559882	| PESEL NIEPOPRAWNY
+---------------------------------
+56120838685	| Pesel poprawny!
+Płeć: F	|  Data urodzin: 8.12.1956r.	|  Wiek: 0
+---------------------------------
+52112918975	| Pesel poprawny!
+Płeć: M	|  Data urodzin: 29.11.1952r.	|  Wiek: 0
+---------------------------------
+00262189697	| Pesel poprawny!
+Płeć: M	|  Data urodzin: 21.6.2000r.	|  Wiek: 0
+---------------------------------
+76188881646	| PESEL NIEPOPRAWNY
+---------------------------------
+620ds11692757	| PESEL NIEPOPRAWNY - dopuszczalne tylko cyfry
+---------------------------------
+50022374445	| Pesel poprawny!
+Płeć: F	|  Data urodzin: 23.2.1950r.	|  Wiek: 0
+---------------------------------
+91081274134	| Pesel poprawny!
+Płeć: M	|  Data urodzin: 12.8.1991r.	|  Wiek: 0
+---------------------------------
+86061716915	| Pesel poprawny!
+Płeć: M	|  Data urodzin: 17.6.1986r.	|  Wiek: 0
+---------------------------------
+52042726279	| Pesel poprawny!
+Płeć: M	|  Data urodzin: 27.4.1952r.	|  Wiek: 0
+---------------------------------
+54040983441	| Pesel poprawny!
+Płeć: F	|  Data urodzin: 9.4.1954r.	|  Wiek: 0
+---------------------------------
+98055596686	| PESEL NIEPOPRAWNY
+---------------------------------
