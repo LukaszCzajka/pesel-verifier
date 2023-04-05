@@ -1,7 +1,14 @@
+### my edit wmc###
+*.iml
+.idea/
+.DS_Store
+
 ### IntelliJ IDEA ###
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
+
+
 
 ### Eclipse ###
 .apt_generated
