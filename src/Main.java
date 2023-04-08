@@ -28,7 +28,7 @@ public class Main {
                     FileManager fileManager = new FileManager();
                     System.out.println("Weryfikacja nr PESEL nastąpi po odczycie z pliku.");
                     fileManager.checkFile();
-                    pesel.checkerMenu = 2; // pozwala ustawic chcecker menu w Pesel.showResults.
+                    pesel.setCheckerMenu(2); // pozwala ustawic chcecker menu w Pesel.showResults.
                     pesel.showResult();
 
                 }

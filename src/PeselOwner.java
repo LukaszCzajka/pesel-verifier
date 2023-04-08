@@ -1,18 +1,33 @@
 import java.time.LocalDate;
 
 public class PeselOwner {
-    char gender;
-    int age;
-    int dayOfBirth;
-    int monthOfBirth;
-    int yearOfBirth;
+    private int age;
+    private int dayOfBirth;
+    private int monthOfBirth;
+    private int yearOfBirth;
+
+    public int getDayOfBirth() {
+        return dayOfBirth;
+    }
+
+    public int getMonthOfBirth() {
+        return monthOfBirth;
+    }
+
+    public int getYearOfBirth() {
+        return yearOfBirth;
+    }
+
+    public int getAge() {
+        return age;
+    }
 
     Pesel pesel = new Pesel();
 
     LocalDate localDate = LocalDate.now(); // zwraca obecną datę
 
-    int[] tabPesel = pesel.getTabPesel();
-    boolean correctPesel = pesel.getCorrectPesel();
+    private int[] tabPesel = pesel.getTabPesel();
+    private boolean correctPesel = pesel.getCorrectPesel();
 
     void getInformation(int[] tabPesel, boolean correctPesel){
 
@@ -20,7 +35,6 @@ public class PeselOwner {
             bDay(tabPesel);
             genderCheck(tabPesel);
             checkAge();
-
        }
     } //KONIEC METODY getInformation
 
@@ -43,6 +57,7 @@ public class PeselOwner {
     }//KONIEC METODY bDay
 
     char genderCheck(int tabPesel[]){
+        char gender;
         if(tabPesel[9] % 2 == 0){
             return gender = 'F';
         }else {
@@ -58,6 +73,7 @@ public class PeselOwner {
 
         if(dayOfBirth > currentDay){
             currentDay += lengthOfCurrentMonth;
+            currentMonth = currentMonth -1;
         }
         if(monthOfBirth > currentMonth){
             currentYear = currentYear - 1;
@@ -66,6 +82,11 @@ public class PeselOwner {
         int calculatedDay = currentDay - dayOfBirth;
         int calculatedMonth = currentMonth - monthOfBirth;
         int calculatedYear = currentYear - yearOfBirth;
+
+        // powyższe 3 zmienne mogą posłużyć gdybyśmy chcieli wyświetlić konkretny wiek użytkownika. tj
+        //ile przeżył lat, ile miesięcy, ile dni
+        //warto zauważyć, że dzięki localDate dostajemy bardzo dokładne wyniki - co do dnia, uwzględniające równiez lata przestępne
+        age = calculatedYear; // ustawia aktulny wiek właściciela pesel
     }//KONIEC METODY changeAge
 
 }// KONIEC KLASY

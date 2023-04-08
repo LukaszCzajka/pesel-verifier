@@ -4,11 +4,14 @@ public class Pesel {
     //dodać weryfikacja na zasadzie miesiąc z liczbą 31 a dni więcej niz 31 - odrzucony
     //zająć się poprawnym wyświetlaniem wieku uż
 
-    public String strPesel;
-    public int checkerMenu;
-
-    private final int[] tabPesel = new int[11];
+    private String strPesel;
+    private int checkerMenu;
     private boolean correctPesel;
+    private final int[] tabPesel = new int[11];
+
+    public void setCheckerMenu(int checkerMenu) {
+        this.checkerMenu = checkerMenu;
+    }
 
     public boolean getCorrectPesel() {
         return correctPesel;
@@ -92,7 +95,9 @@ public class Pesel {
             verificationPesel(strPesel);
             peselOwner.getInformation(tabPesel, correctPesel);
             if (correctPesel) { // prezentacja informacji o nr PESEL tylko jeśli jest poprawny
-                System.out.println(verificationPesel(strPesel) + "\t|  Płeć: " + peselOwner.genderCheck(tabPesel) + "\t|  Data urodzin: " + peselOwner.dayOfBirth + "." + peselOwner.monthOfBirth + "." + peselOwner.yearOfBirth + "r." + "\t|  Wiek: " + peselOwner.age);
+                System.out.println(verificationPesel(strPesel) + "\t|  Płeć: " + peselOwner.genderCheck(tabPesel) + "\t|  Data urodzin: " + peselOwner.getDayOfBirth() + "." + peselOwner.getMonthOfBirth() + "." + peselOwner.getYearOfBirth() + "r." + "\t|  Wiek: " + peselOwner.getAge());
+            } else {
+                System.out.println(verificationPesel(strPesel));
             }
         } else if (checkerMenu == 2) {//wykonuje i prezentuje dla menu 2
             PrintWriter writer = new PrintWriter("DoZapisu.txt");
@@ -105,13 +110,16 @@ public class Pesel {
                 System.out.println("Wynik dla nr PESEL: " + strPesel);
                 verificationPesel(strPesel); // odpalane aby można było wykonać peselOwner.showInformation(tabPesel, correctPesel);
                 peselOwner.getInformation(tabPesel, correctPesel); // wykonuje funkcje które obliczają: wiek, daty urodzenia, płeć
-                System.out.println(verificationPesel(strPesel) + "\t|  Płeć: " + peselOwner.genderCheck(tabPesel) + "\t|  Data urodzin: " + peselOwner.dayOfBirth + "." + peselOwner.monthOfBirth + "." + peselOwner.yearOfBirth + "r.");
+                System.out.println(verificationPesel(strPesel));// + "\t|  Płeć: " + peselOwner.genderCheck(tabPesel) + "\t|  Data urodzin: " + peselOwner.getDayOfBirth() + "." + peselOwner.getMonthOfBirth() + "." + peselOwner.getYearOfBirth() + "r." + "\t|  Wiek: " + peselOwner.getAge());
+                if (correctPesel){     // prezentacja informacji o nr PESEL tylko jeśli jest poprawny
+                    System.out.println("Płeć: " + peselOwner.genderCheck(tabPesel) + "\t|  Data urodzin: " + peselOwner.getDayOfBirth() + "." + peselOwner.getMonthOfBirth() + "." + peselOwner.getYearOfBirth() + "r." + "\t|  Wiek: " + peselOwner.getAge());
+                }
                 System.out.println("---------------------------------");
 
                 //zapis w pliku:
                 writer.println(strPesel + "\t| " + verificationPesel(strPesel));
                 if (correctPesel){     // prezentacja informacji o nr PESEL tylko jeśli jest poprawny
-                    writer.println("Płeć: " + peselOwner.genderCheck(tabPesel) + "\t|  Data urodzin: " + peselOwner.dayOfBirth + "." + peselOwner.monthOfBirth + "." + peselOwner.yearOfBirth + "r." + "\t|  Wiek: " + peselOwner.age);
+                    writer.println("Płeć: " + peselOwner.genderCheck(tabPesel) + "\t|  Data urodzin: " + peselOwner.getDayOfBirth() + "." + peselOwner.getMonthOfBirth() + "." + peselOwner.getYearOfBirth() + "r." + "\t|  Wiek: " + peselOwner.getAge());
                 }
                 writer.println("---------------------------------");
             }
