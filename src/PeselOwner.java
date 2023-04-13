@@ -6,28 +6,21 @@ public class PeselOwner {
     private int monthOfBirth;
     private int yearOfBirth;
 
+    //gettery
     public int getDayOfBirth() {
         return dayOfBirth;
     }
-
     public int getMonthOfBirth() {
         return monthOfBirth;
     }
-
     public int getYearOfBirth() {
         return yearOfBirth;
     }
-
     public int getAge() {
         return age;
     }
 
-    Pesel pesel = new Pesel();
-
     LocalDate localDate = LocalDate.now(); // zwraca obecną datę
-
-    private int[] tabPesel = pesel.getTabPesel();
-    private boolean correctPesel = pesel.getCorrectPesel();
 
     void getInformation(int[] tabPesel, boolean correctPesel){
 
@@ -38,7 +31,7 @@ public class PeselOwner {
        }
     } //KONIEC METODY getInformation
 
-    void bDay(int tabPesel[]){
+    void bDay(int[] tabPesel){
         int century; // obliczane stulecie urodzin
         if(tabPesel[2] == 8 || tabPesel[2] == 9){
             century = 18;
@@ -52,11 +45,9 @@ public class PeselOwner {
         dayOfBirth = (tabPesel[4] * 10) + tabPesel[5];                //day
         monthOfBirth = tabPesel[2] * 10 + tabPesel[3];                  //month
         yearOfBirth = century * 100 + tabPesel[0] * 10 + tabPesel[1];  //year
-
-
     }//KONIEC METODY bDay
 
-    char genderCheck(int tabPesel[]){
+    char genderCheck(int[] tabPesel){
         char gender;
         if(tabPesel[9] % 2 == 0){
             return gender = 'F';
@@ -88,5 +79,4 @@ public class PeselOwner {
         //warto zauważyć, że dzięki localDate dostajemy bardzo dokładne wyniki - co do dnia, uwzględniające równiez lata przestępne
         age = calculatedYear; // ustawia aktulny wiek właściciela pesel
     }//KONIEC METODY changeAge
-
 }// KONIEC KLASY
